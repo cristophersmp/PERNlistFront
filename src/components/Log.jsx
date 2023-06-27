@@ -32,7 +32,7 @@ const Log = () => {
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
       try {
-        const res = await fetch(`http://localhost:3000/post/login`, {
+        const res = await fetch(`https://pernlist-back.vercel.app/post/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

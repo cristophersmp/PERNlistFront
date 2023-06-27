@@ -6,14 +6,14 @@ function ListaTareas() {
   const navigate = useNavigate();
 
   const cargarTareas = async () => {
-    const res = await fetch("http://localhost:3000/tareas");
+    const res = await fetch("https://pernlist-back.vercel.app/tareas");
     const datos = await res.json();
     setTareas(datos);
   };
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:3000/tareas/${id}`, {
+      await fetch(`https://pernlist-back.vercel.app/tareas/${id}`, {
         method: "DELETE",
       });
       setTareas(tareas.filter((tarea) => tarea.id !== id));
