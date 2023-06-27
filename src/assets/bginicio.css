@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  margin: 0;
+}
+.colorchange {
+  width: 100vw;
+  height: 100vh;
+  animation: colorloop 18s linear infinite;
+}
+.inverter {
+  font-family: "Anton", sans-serif;
+  font-size: calc(4vh + 3.5vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: invert(1) grayscale(1) contrast(10);
+}
+#list {
+  font-family: "Gloria Hallelujah", cursive;
+}
+@keyframes colorloop {
+  0% {
+    background: #d9d7d8;
+  }
+  50% {
+    background: #2d2d2d;
+  }
+  100% {
+    background: #d9d7d8;
+  }
+}
