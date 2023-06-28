@@ -17,7 +17,9 @@ function App() {
   return (
     <React.Fragment>
       <Navbar />
-      <MuiContainer style={{ paddingLeft: 0, paddingRight: 0 }}>
+      <MuiContainer
+        style={{ paddingLeft: 0, paddingRight: 0, maxWidth: "100vw" }}
+      >
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="iniciosesion" element={<InicioSesion />} />
