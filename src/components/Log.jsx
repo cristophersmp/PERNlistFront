@@ -36,7 +36,7 @@ const Log = () => {
           `https://per-nlist-front.vercel.app/post/login`,
           {
             method: "GET",
-            headers: {
+            body: {
               "content-type": "application/json",
             },
             body: JSON.stringify(formData),
