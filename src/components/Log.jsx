@@ -37,7 +37,7 @@ const Log = () => {
           {
             method: "GET",
             headers: {
-              "Content-Type": "application/json",
+              "content-type": "application/json",
             },
             body: JSON.stringify(formData),
           }
