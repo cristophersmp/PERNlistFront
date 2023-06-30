@@ -23,7 +23,9 @@ function Formulario() {
     setTarea({ ...tarea, [e.target.name]: e.target.value });
 
   const cragarTareaUnica = async (id) => {
-    const respuesta = await fetch(`http://localhost:3000/tareas/${id}`);
+    const respuesta = await fetch(
+      `https://per-nlist-front.vercel.app/tareas/${id}`
+    );
     const datos = await respuesta.json();
     setTarea({ titulo: datos.titulo, descripcion: datos.descripcion });
     setEditar(true);
@@ -42,7 +44,7 @@ function Formulario() {
 
       if (editar) {
         const respuesta = await fetch(
-          `http://localhost:3000/tareas/${params.id}`,
+          `https://per-nlist-front.vercel.app/tareas/${params.id}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -54,7 +56,7 @@ function Formulario() {
       } else {
         console.log(tarea);
         console.log(JSON.stringify(tarea));
-        await fetch("http://localhost:3000/tareas", {
+        await fetch("https://per-nlist-front.vercel.app/tareas", {
           method: "POST",
           body: JSON.stringify(tarea),
           headers: { "Content-Type": "application/json" },

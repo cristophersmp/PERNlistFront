@@ -4,13 +4,16 @@ import { Card, CardContent, TextField, Button, Box } from "@mui/material";
 
 const registrarUsuario = async (data) => {
   try {
-    const response = await fetch(`http://localhost:3000/post/registro`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(
+      `https://per-nlist-front.vercel.app/post/registro`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
     const responseData = await response.json();
   } catch (error) {
     console.error(error);
