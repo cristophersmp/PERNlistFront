@@ -35,7 +35,7 @@ const Log = () => {
         const res = await fetch(
           `https://per-nlist-front.vercel.app/post/login`,
           {
-            method: "POST",
+            method: "GET",
             headers: {
               "Content-Type": "application/json",
             },
