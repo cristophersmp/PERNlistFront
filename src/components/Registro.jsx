@@ -11,6 +11,7 @@ const registrarUsuario = async (data) => {
       },
       body: JSON.stringify(data),
     });
+    console.log(response);
     const responseData = await response.json();
     if (response.ok) {
       alert(`Bienvenid@ ${data.nombre}`);
