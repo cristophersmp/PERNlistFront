@@ -32,16 +32,13 @@ const Log = () => {
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
       try {
-        const res = await fetch(
-          `https://per-nlist-front.vercel.app/post/login`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          }
-        );
+        const res = await fetch(`pernlist-back.vercel.app/post/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
         const response = await res.json();
         if (res.ok) {
           setToken(response.token);
