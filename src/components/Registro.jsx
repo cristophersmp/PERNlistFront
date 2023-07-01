@@ -15,8 +15,15 @@ const registrarUsuario = async (data) => {
       }
     );
     const responseData = await response.json();
+    if (response.ok) {
+      alert(`Bienvenid@ ${data.nombre}`);
+    } else {
+      alert("Algo salió mal, intente de nuevo");
+    }
+    return responseData;
   } catch (error) {
     console.error(error);
+    throw new Error("Error al registrar el usuario");
   }
 };
 

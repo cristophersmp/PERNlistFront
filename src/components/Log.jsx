@@ -35,20 +35,26 @@ const Log = () => {
         const res = await fetch(
           `https://per-nlist-front.vercel.app/post/login`,
           {
-            method: "GET",
-            body: {
-              "content-type": "application/json",
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
           }
         );
         const response = await res.json();
-        setToken(response.token);
-        localStorage.setItem("token", response.token);
-        login(response.token);
-        navigate("/iniciotareas");
+        if (res.ok) {
+          setToken(response.token);
+          localStorage.setItem("token", response.token);
+          login(response.token);
+          navigate("/nuevatarea");
+          alert("Inicio de sesión exitoso");
+        } else {
+          alert(response.mensaje || "Error al iniciar sesión");
+        }
       } catch (error) {
         console.error(error);
+        alert("Error al iniciar sesión");
       }
     } else {
       setFormErrors(errors);
